@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
+    
+
+    <title>Signup</title>
+
+</head>
+<body id='body'>
+    <nav class="nav">
+        <div class="nav_1">
+            <span class="logo" onclick="link('/')">Sharespace</span>
+            <button onclick="link('/login')">Login</button>
+        </div>
+    </nav>
+    <center>
+        <div class="login_form">
+            <h3>Register</h3>
+            <div class="input">
+                <!--user name icon-->
+                <img src="./images/account_circle.svg" alt="" class="input_icon">
+                <input type="text" class="form_input" placeholder="User name" name="username" id="username">
+            </div>
+            <div class="input">
+                <!--user name icon-->
+                <img src="./images/account_circle.svg" alt="" class="input_icon">
+                <input type="text" class="form_input" placeholder="Email" name="email" id="email">
+            </div>
+            <span>password</span>
+            <div class="input">
+                <!--user name icon-->
+                <img src="./images/lock.svg" alt="" class="input_icon">
+                <input type="password" class="form_input" placeholder="password" name="password" id="password">
+            </div>
+
+            <div class="input">
+                <!--user name icon-->
+                <img src="./images/lock.svg" alt="" class="input_icon">
+                <input type="password" class="form_input" placeholder="confirm password" name="confirmed_password" id="confirmed_password">
+            </div>
+
+            <button class="login_button" style="margin-bottom: 20px;" onclick="new_user_registration()">Register</button>
+            </div>
+        </div>
+    </center>
+
+
+
+
+    <script>
+
+        function new_user_registration(){
+            if(validateForm()){
+                submitRegistrationForm()
+            }else{
+                console.log('Error,Failed')
+            }
+        }
+
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var confirmedPassword = document.getElementById("confirmed_password").value;
+		var specialChars = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]+/;
+
+            // Check if any field is empty
+            if (username === '' || email === '' || password === '' || confirmedPassword === '') {
+                console.log("Please fill in all the fields.");
+		alert("Please fill in all the feilds")
+                return false;
+            }
+            // Check if confirmed password matches the password
+            else if (password !== confirmedPassword) {
+                console.log("The password and confirmed password do not match.");
+                return false;
+            }else if(!specialChars.test(password)){
+			console.log('Your password must contain special characters');
+			return false;
+		}
+
+            // All validations passed
+            console.log("Form validation successful!");
+            // Perform further actions or submit the form
+            return true;
+        }
+
+
+        function submitRegistrationForm() {
+            var username = document.getElementById("username").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            var form = document.createElement("form");
+            form.setAttribute("method", "post");
+            form.setAttribute("action", "/new_registration/new");
+
+            // Create input elements for username, email, and password
+            var usernameInput = document.createElement("input");
+            usernameInput.setAttribute("type", "text");
+            usernameInput.setAttribute("name", "username");
+            usernameInput.setAttribute("value", username);
+            form.appendChild(usernameInput);
+
+            var emailInput = document.createElement("input");
+            emailInput.setAttribute("type", "email");
+            emailInput.setAttribute("name", "email");
+            emailInput.setAttribute("value", email);
+            form.appendChild(emailInput);
+
+            var passwordInput = document.createElement("input");
+            passwordInput.setAttribute("type", "password");
+            passwordInput.setAttribute("name", "password");
+            passwordInput.setAttribute("value", password);
+            form.appendChild(passwordInput);
+
+            // Append the form to the document body and submit it
+            document.body.appendChild(form);
+            form.submit();
+        }
+
+
+	function small_notifiaction(notification_text){
+            bod=document.getElementById('body')
+            var notification=document.createElement('span')
+            notification.id='notification'
+            notification.textContent=notification_text
+            bod.appendChild(notification)
+        }
+
+    </script>
+
+
+
+</body>
+<script>
+    function link(link_to){
+        window.location=link_to
+    }
+</script>
+</html>
