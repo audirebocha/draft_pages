@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharespace</title>
+    <link rel="stylesheet" href="login.css">
+    <style>
+    </style>
+</head>
+<body>
+
+    <div  class='login_body' style="">
+        <nav class="login_nav">
+            <div class="login_nav_1">
+                <span class="login_logo" onclick="link('/')">Sharespace</span>
+                <button onclick="link('/signup')">Sign up</button>
+            </div>
+        </nav>
+        <center>
+            <div class="login_login_form">
+                <form method="post" action="/login_processor/">
+                <h2>Login</h2>
+                <div class="login_login_input">
+                    <!--user name icon-->
+                    <img src="./images/account_circle.svg" alt="" class="login_input_icon" >
+                    <input type="text" class="login_form_input"  name="username" placeholder="Email" required="true">
+                </div>
+                <div class="login_login_input">
+                    <!--user name icon-->
+                    <img src="./images/lock.svg" alt="" class="login_input_icon">
+                    <input type="password" name="password" class="login_form_input" placeholder="password" required>
+                </div>
+    
+                <button class="login_login_button" type="submit">Login</button>
+                </form>
+                <p>or</p>
+                <div class="login_google_auth_api" >
+                    <img class='login_input_icon' src="./images/google.svg" alt="" class="login_google">
+                    <span>Sign in with google</span>
+                </div>
+    
+                <p><a href="/reset_password" style='color:red;'>Forgot your password?</a><a href="/registration">Signup?</a></p>
+            </div>
+        </center>
+    
+    
+
+    </div>
+    
+</body>
+</html>
