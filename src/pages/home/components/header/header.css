@@ -1,128 +1,49 @@
 .header {
-  background-color: #003580;
-  color: white;
+  background-image: url('./assets/image1.jpg'); /* Replace with your own image path */
+  background-size: cover;
+  background-position: center;
+  height: calc(100vh - 80px); /* Adjust the height based on your needs */
   display: flex;
+  align-items: center;
   justify-content: center;
+}
+
+.header-content {
+  text-align: center;
+  color: #000000; /* Update the color to a beautiful shade */
   position: relative;
+  z-index: 1;
 }
 
-.headerContainer {
-  width: 100%;
-  max-width: 1024px;
-  margin: 20px 0px 100px 0px;
+.header-title {
+  font-size: 60px;
+  margin-bottom: 20px;
+  font-weight: bold; /* Add font weight to make the title stand out */
 }
 
-.headerContainer.listMode {
-  margin: 20px 0px 0px 0px;
+.header-text {
+  font-size: 20px;
+  margin-bottom: 40px;
+  font-weight: 500; /* Adjust font weight as needed */
 }
 
-.headerList {
-  display: flex;
-  gap: 40px;
-  margin-bottom: 50px;
-}
-
-.headerListItem {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.headerListItem.active {
-  border: 1px solid white;
-  padding: 10px;
-  border-radius: 20px;
-}
-
-.headerDesc {
-  margin: 20px 0px;
-}
-
-.headerBtn {
-  background-color: #0071c2;
-  color: white;
-  font-weight: 500;
+.header-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #45b1e8; /* Update the button color to match the text color */
+  color: #fff;
   border: none;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.headerSearch {
-  height: 30px;
-  background-color: white;
-  border: 3px solid #febb02;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  padding: 10px 0px;
   border-radius: 5px;
-  position: absolute;
-  bottom: -25px;
-  width: 100%;
-  max-width: 1024px;
-}
-
-.headerIcon {
-  color: lightgray;
-}
-
-.headerSearchItem {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.headerSearchInput {
-  border: none;
-  outline: none;
-}
-
-.headerSearchText {
-  color: lightgray;
   cursor: pointer;
+  font-weight: bold; /* Add font weight to make the button text stand out */
 }
-
-.date {
+.Logo {
   position: absolute;
-  top: 50px;
-  z-index: 2;
-}
+  top: 10px; /* Adjust the value as per your requirements */
+  left: 10px; /* Adjust the value as per your requirements */
+  width: 100px; /* Adjust the width as per your requirements */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 10%; /* Maintain aspect ratio */
+  max-height: 10%; /* Maintain aspect ratio */
 
-.options {
-  z-index: 2;
-  position: absolute;
-  top: 50px;
-  background-color: white;
-  color: gray;
-  border-radius: 5px;
-  -webkit-box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
-  box-shadow: 0px 0px 10px -5px rgba(0, 0, 0, 0.4);
-}
-
-.optionItem {
-  width: 200px;
-  display: flex;
-  justify-content: space-between;
-  margin: 10px;
-}
-
-.optionCounter {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 12px;
-  color: black;
-}
-
-.optionCounterButton {
-  width: 30px;
-  height: 30px;
-  border: 1px solid #0071c2;
-  color: #0071c2;
-  cursor: pointer;
-  background-color: white;
-}
-
-.optionCounterButton:disabled {
-  cursor: not-allowed;
 }
