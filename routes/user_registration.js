@@ -7,7 +7,7 @@ const User=require('../models/user')
 const sg_mail= require('@sendgrid/mail')
 
 
-const API_key="SG.vPsS9sdSSZeEFhKIWLnYZw.V0Bsad9YlSCpDm6DSfea1iuEMnfPmSTaE4RJ9rijdxMs";
+const API_key="";
 sg_mail.setApiKey(API_key)
 
 
@@ -85,7 +85,7 @@ router.post('/new', urlencodedParser,async (req, res) => {
 
 function send_activation_email(recipient){
     //You will need to hash the email before you send the link
-    var API_key="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";
+    var API_key="";
     sg_mail.setApiKey(API_key)
     console.log("Sending message to "+recipient+"...")
     var body="Hi, Welcome to sharespace, we are very excited to have you and are eager to help you find the place that suites you"
