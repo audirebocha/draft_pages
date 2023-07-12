@@ -3,6 +3,9 @@ import { useState, React } from 'react'
 import './SublettingForm.css'
 import Navbar from '../home/components/navbar/Navbar'
 import axios from 'axios'
+import toast, { Toaster } from 'react-hot-toast';
+import { useEffect } from 'react';
+
 
 
 
@@ -13,6 +16,7 @@ export default function SublettingForm() {
   const [endDateTime, setEndDateTime] =useState("");
   const [rentAmount, setRentAmount] =useState(0);
   const [securityDepositAmount, setSecurityDepositAmount] =useState(0);
+  const [goBack, setGoBack] =useState(false);
 
 
   const formData = {
@@ -25,12 +29,26 @@ export default function SublettingForm() {
     securityDepositAmount
   };
 
+  const notify = () => toast('Booking Done Successfully. \n\nCheck your Phone for Payment Prompt');
+    useEffect(() => {
+      if (goBack) {
+        const delay = 4000; // Delay in milliseconds (2 seconds in this example)
+
+        const timeoutId = setTimeout(() => {
+          window.history.back();
+        }, delay);
+
+        return () => clearTimeout(timeoutId); // Clear the timeout if the component unmounts before the delay completes
+      }
+    }, [goBack]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     
    axios.post('http://localhost:4000/order', formData) 
    paywithMpesa()
+   notify()
+    setGoBack(true)
   };
 
   async function paywithMpesa() {
@@ -43,7 +61,22 @@ export default function SublettingForm() {
   }
 
   return (
-    <><Navbar /><form
+    <><Navbar />
+    <Toaster
+       position="top-center"
+       reverseOrder={false}
+       duration={5000}
+       toastOptions={{
+          // Define default options
+          className: "",
+          duration: 5000,
+          style: {
+            background: "#713200",
+            color: "#fff",
+          },
+      }}
+              />
+    <form
       className="subletting-order-form"
       onSubmit={handleSubmit}>
 
@@ -63,7 +96,7 @@ export default function SublettingForm() {
           name="phoneNumber"
           value={phoneNumber}
           placeholder='254'
-          onChange={(e) => setphoneNumber(e.target.value)} />
+          onChange={(e) => setphoneNumber(e.target.value)} required/>
       </div>
       <div>
         <label className="subletting-order-form-label">Start Date</label>

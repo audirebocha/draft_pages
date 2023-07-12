@@ -45,15 +45,17 @@ const IndividualListing = () => {
         <h1 className="card-title">{listing.title} - {listing.place}</h1>
           <div className='main'>
             <img src="https://res.cloudinary.com/dhoqljhsj/image/upload/v1689091377/ltz1co5iitl4fjh8txpz.webp" alt="Listing" className="card-img-top" />
-            <p className="card-aside"><b>Kes  {listing.price}</b> Monthly</p>
-            <button className="individual-button" onClick={e=>{nav('SublettingForm')}}>Reserve </button>
+            <div className="aside">
+              <p className="card-aside"><b>Kes  {listing.price}</b> Monthly</p>
+              <button className="individual-button" onClick={e=>{nav('SublettingForm')}}>Reserve </button>
+            </div>
             </div> 
           
           
 
           <div className="card-body">
               <p className="card-text">Features: {listing.features}</p>
-              <p className="card-text">Sublets: {listing.sublets}</p>
+              <p className="card-text">Type of Sublet: {listing.sublets}</p>
               <p className="card-text">Smoking Allowed: {listing.isSmokingAllowed ? 'Yes' : 'No'}</p>
               <p className="card-text">Pets Allowed: {listing.isPetsAllowed ? 'Yes' : 'No'}</p>
               <p className="card-text">Perks: {listing.perks}</p>
