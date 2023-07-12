@@ -7,7 +7,7 @@ const User=require('../models/user')
 const sg_mail= require('@sendgrid/mail')
 
 
-const API_key="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";
+const API_key="";
 sg_mail.setApiKey(API_key)
 
 
