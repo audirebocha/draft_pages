@@ -5,6 +5,7 @@ import Footer from "./components/footer/Footer";
 import MailList from "./components/mailList/MailList";
 import Navbar from "./components/navbar/Navbar";
 import PropertyList from "./components/propertyList/PropertyList";
+
 import Hostels from "./components/hostels/Hostels";
 import "./home.css";
 
