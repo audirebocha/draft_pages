@@ -1,0 +1,36 @@
+.subletting-order-form {
+    width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+
+    margin-top: 55px;
+  }
+  
+  .subletting-order-form h1 {
+    text-align: center;
+    font-size: 20px;
+  }
+  
+  .subletting-order-form label {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .subletting-order-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 20px;
+  }
+  
+  .subletting-order-form button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-top: 20px;
+  }
+  

@@ -17,6 +17,7 @@ import Password_reset from './pages/auth/password_reset/password_reset.jsx';
 import Enlisting_form from './pages/enlisting_form/form.jsx';
 import ListingDetails from './pages/listingDetails/ListingDetails.jsx';
 import ListingIndividualDetails from './pages/listingDetails/ListingIndividualDetails.jsx';
+import SublettingForm from './pages/orders/SublettingForm.jsx';
 
 
 
@@ -50,7 +51,11 @@ const router = createBrowserRouter([
   {
     path:'listingDetails/:id',
     element: <ListingIndividualDetails/>,
-  }
+  },
+  {
+    path:'listingDetails/:id/SublettingForm',
+    element: <SublettingForm/>,
+  },
 ])
 
 

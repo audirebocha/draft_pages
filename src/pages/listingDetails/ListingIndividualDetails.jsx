@@ -3,11 +3,20 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import './IndividualListing.css';
 import Navbar from '../home/components/navbar/Navbar';
+import { useNavigate } from 'react-router-dom';
 
 
 const IndividualListing = () => {
   const { id } = useParams();
   const [listing, setListing] = useState(null);
+
+
+  const navigate = useNavigate()
+  
+      function nav(url) {
+          navigate(url); 
+        }
+
 
   useEffect(() => {
     const fetchListing = async () => {
@@ -25,8 +34,9 @@ const IndividualListing = () => {
   if (!listing) {
     return <div>Loading...</div>;
   }
-
-  return (
+ 
+  
+     return (
     <div>
       <Navbar />
       <div className="container mt-4">
@@ -36,7 +46,11 @@ const IndividualListing = () => {
           <div className='main'>
             <img src="https://res.cloudinary.com/dhoqljhsj/image/upload/v1689091377/ltz1co5iitl4fjh8txpz.webp" alt="Listing" className="card-img-top" />
             <p className="card-aside"><b>Kes  {listing.price}</b> Monthly</p>
-          </div>
+            <button className="individual-button" onClick={e=>{nav('SublettingForm')}}>Reserve </button>
+            </div> 
+          
+          
+
           <div className="card-body">
               <p className="card-text">Features: {listing.features}</p>
               <p className="card-text">Sublets: {listing.sublets}</p>
