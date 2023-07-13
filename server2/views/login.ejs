@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
+    
+
+    <title>Login</title>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav_1">
+            <span class="logo" onclick="link('/')">Sharespace</span>
+            <button onclick="link('/registration')">Signup</button>
+        </div>
+    </nav>
+    <center>
+        <div class="login_form">
+            <form method="post" action="/login_processor/">
+            <h2>Login</h2>
+            <div class="input">
+                <!--user name icon-->
+                <img src="./images/account_circle.svg" alt="" class="input_icon" >
+                <input type="text" class="form_input"  name="username" placeholder="Email" required="true">
+            </div>
+            <div class="input">
+                <!--user name icon-->
+                <img src="./images/lock.svg" alt="" class="input_icon">
+                <input type="password" name="password" class="form_input" placeholder="password" required>
+            </div>
+
+            <button class="login_button" type="submit">Login</button>
+            </form>
+            <p>or</p>
+            <div class="google_auth_api" >
+                <img class='input_icon' src="./images/google.svg" alt="" class="google">
+                <span>Sign in with google</span>
+            </div>
+
+            <p><a href="/reset_password">Forgot your password?</a><a href="/registration">Signup?</a></p>
+        </div>
+    </center>
+
+
+
+
+</body>
+<script>
+    function link(link_to){
+        window.location=link_to
+    }
+</script>
+</html>
