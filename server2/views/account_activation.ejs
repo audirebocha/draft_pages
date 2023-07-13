@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/login.css">
+    
+
+    <title>Signup</title>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav_1">
+            <span class="logo">Sharespace</span>
+            <button onclick="link('/login')">Login</button>
+        </div>
+    </nav>
+    <center>
+        <div class="login_form">
+            <h1>Welcome to Sharespace!!</h1>
+            <h3>We have sent an email verification to your email</h3>
+            <h3>Activate your account to continue</h3>
+            <h2>Thank you</h2>
+        </div>
+    </center>
+
+
+
+
+    <script>
+
+        function new_user_registration(){
+            if(validateForm()){
+                submitRegistrationForm()
+            }else{
+                console.log('Error,Failed')
+            }
+        }
+
+        function validateForm() {
+            var username = document.getElementById("username").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var confirmedPassword = document.getElementById("confirmed_password").value;
+
+            // Check if any field is empty
+            if (username === '' || email === '' || password === '' || confirmedPassword === '') {
+                console.log("Please fill in all the fields.");
+                return false;
+            }
+            // Check if confirmed password matches the password
+            else if (password !== confirmedPassword) {
+                console.log("The password and confirmed password do not match.");
+                return false;
+            }
+
+            // All validations passed
+            console.log("Form validation successful!");
+            // Perform further actions or submit the form
+            return true;
+        }
+
+
+        function submitRegistrationForm() {
+            var username = document.getElementById("username").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+
+            var form = document.createElement("form");
+            form.setAttribute("method", "post");
+            form.setAttribute("action", "/new_registration/new");
+
+            // Create input elements for username, email, and password
+            var usernameInput = document.createElement("input");
+            usernameInput.setAttribute("type", "text");
+            usernameInput.setAttribute("name", "username");
+            usernameInput.setAttribute("value", username);
+            form.appendChild(usernameInput);
+
+            var emailInput = document.createElement("input");
+            emailInput.setAttribute("type", "email");
+            emailInput.setAttribute("name", "email");
+            emailInput.setAttribute("value", email);
+            form.appendChild(emailInput);
+
+            var passwordInput = document.createElement("input");
+            passwordInput.setAttribute("type", "password");
+            passwordInput.setAttribute("name", "password");
+            passwordInput.setAttribute("value", password);
+            form.appendChild(passwordInput);
+
+            // Append the form to the document body and submit it
+            document.body.appendChild(form);
+            form.submit();
+        }
+
+    </script>
+
+
+
+</body>
+<script>
+    function link(link_to){
+        window.location=link_to
+    }
+</script>
+</html>

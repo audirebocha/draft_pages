@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;800&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sharespace</title>
+    <link rel="stylesheet" href="user_dash.css">
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="nav_1">
+            <span class="logo">Sharespace</span>
+            <button onclick="link('/registration')">Dashboard</button>
+            <button onclick="link('/login')">Logout</button>
+        </div>
+    </nav>
+
+
+
+    <div class="dashpga_dash_controls">
+        <div class="dashpga_dash_control_button">
+            <img src="./dash_icons/view-dashboard.svg" alt="">
+            <p>Dashboard</p>
+        </div>
+        <div class="dashpga_dash_control_button">
+            <img src="./dash_icons/profile.svg" alt="">
+            <p>Users</p>
+        </div>
+        <div class="dashpga_dash_control_button">
+            <img src="./dash_icons/profile.svg" alt="">
+            <p>Profile</p>
+        </div>
+
+        <div class="dashpga_dash_control_button">
+            <img src="./dash_icons/listing.svg" alt="">
+            <p>Listings</p>
+        </div>
+    </div>
+
+
+    <section class="dashpga_containerlvl0">
+        <div class="dashpga_dash_container">
+            <div class="dashpga_dashboard_container_type1">
+                <div class="dashpga_content_container_type1">
+                    <p>No. Users</p>
+                    <h3 style="font-size: 60px;">10</h3>
+                </div>
+
+                <div class="dashpga_content_container_type1">
+                    <p>No. Listings</p>
+                    <h3 style="font-size: 60px;">100</h3>
+                </div>
+
+
+
+            </div>
+
+
+            <!-- A users tabel -->
+            <div class="dashpga_dash_container_type2_centered">
+                <div class="dashpga_dash_table">
+                    <table>
+                        <tr>
+                            <th>Username</th>
+                            <th>Email</th>
+                        </tr>
+                        <tr>
+                            <td>audire</td>
+                            <td>audire@gmail.com</td>
+                            <td>
+                                <div class="dashpga_dash_table_button">
+                                    <img src="./dash_icons/visibility.svg" alt="">
+                                    <p>View</p>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="dashpga_dash_table_button">
+                                    <img src="./dash_icons/delete.svg" alt="">
+                                    <p>Delete</p>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+
+            <div class="dashpga_dash_container_type2_centered">
+                
+                <div class="dashpga_dash_table">
+                    <p>Graph</p>
+                    <canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+
+
+</html>
