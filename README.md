@@ -59,19 +59,19 @@ During the backend development phase, we implemented various features and functi
 6. Security measures such as input validation, authentication middleware, and authorization checks were implemented.
 7. Error handling and logging mechanisms were set up for better debugging and monitoring.
 8. Extensive testing was performed to ensure the backend functionality meets the requirements.
+9. Mpesa stk push was integrated allowing users to pay for something they ordered.
 
 ## Frontend Development <a name="frontend-development"></a>
 
 The frontend of our Subletting Application provides users with an intuitive and engaging interface. Here's an overview of the frontend development process:
 
-1. The user interface was designed and developed using HTML, CSS, and JavaScript.
+1. The user interface was designed and developed using HTML, CSS, and JavaScript on REACT Framework
 2. User registration and login forms were implemented to facilitate user authentication.
 3. Pages for sublet listing creation, update, and deletion were created.
-4. The search functionality was developed, allowing users to filter sublets and view search results.
-5. User profile management pages were implemented for easy user account management.
-6. API calls were integrated into the frontend components to retrieve and submit data to the backend.
-7. The user interface was enhanced with interactive elements and responsive design.
-8. Extensive testing was performed to ensure the frontend components function correctly.
+4.  User profile management pages were implemented for easy user account management.
+5.  API calls were integrated into the frontend components to retrieve and submit data to the backend.
+6.  The user interface was enhanced with interactive elements and responsive design.
+7.  Extensive testing was performed to ensure the frontend components function correctly.
 
 ## Testing <a name="testing"></a>
 
@@ -86,7 +86,7 @@ Throughout the development process, we conducted comprehensive testing to ensure
 
 The Subletting Application has been successfully deployed for public use. Here are the steps we followed for deployment:
 
-1. We chose a reliable hosting platform, such as Heroku, AWS, or Azure, for both the backend and frontend components.
+1. We chose a reliable hosting platform,Firebase for both the backend and frontend components.
 2. We set up the necessary infrastructure and configured the hosting environment, ensuring it meets the application's requirements.
 3. We built the frontend assets for production using bundlers like webpack or parcel.
 4. A production database instance was set up, and we migrated the necessary data from the development environment.
@@ -97,7 +97,7 @@ The Subletting Application has been successfully deployed for public use. Here a
 
 ## Conclusion <a name="conclusion"></a>
 
-Congratulations! You have successfully completed the Subletting Application project. This documentation has provided a
+Congratulations! You have successfully completed reading our Subletting Application project documentation. This documentation has provided a
 comprehensive overview of the project's requirements, setup process, database design, backend and frontend development, testing, and deployment.
 It will serve as a valuable reference for maintaining and enhancing the application in the future. Feel free to refer back to this documentation
 whenever necessary.
