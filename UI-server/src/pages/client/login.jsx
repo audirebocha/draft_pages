@@ -33,7 +33,6 @@ export default function Admin_Login() {
 
 
     function auth_status() {
-        
         var post_url = 'http://localhost:5000/auth/status'
         var data = { 'code':101 }
         axios.post(post_url, data,headers)

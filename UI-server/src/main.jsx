@@ -14,7 +14,7 @@ import Admin_Dashboard from './pages/admin/dashboard/admin_dash.jsx';
 import ListingDetails from './pages/listingDetails/ListingDetails.jsx';
 import IndividualListing from './pages/listingDetails/ListingIndividualDetails.jsx';
 import SublettingForm from './pages/orders/SublettingForm.jsx';
-
+import Client_Dashboard from './pages/client/dashboard/client_dash.jsx';
 
 
 const router = createBrowserRouter([
@@ -45,6 +45,10 @@ const router = createBrowserRouter([
   {
     path:'admin_dashboard',
     element: <Admin_Dashboard/>,
+  },
+  {
+    path:'client_dashboard',
+    element: <Client_Dashboard/>,
   },
   {
     path:'listingDetails',

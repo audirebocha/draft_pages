@@ -10,7 +10,7 @@ import Users_Manager from "./components/users";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-function Admin_Dashboard(){
+function Client_Dashboard(){
     const [View, setView]=useState('dashboard')
     const navigate = useNavigate()
     function nav(url) {
@@ -75,18 +75,9 @@ function Admin_Dashboard(){
             <img src={dash_logo} alt=""></img>
             <p>Dashboard</p>
         </div>
-        <div className="dashpga_dash_control_button" onClick={(e)=>{setView('manage_users')}}>
-            <img src={profile_logo} alt=""></img>
-            <p>Users</p>
-        </div>
         <div className="dashpga_dash_control_button" onClick={(e)=>{setView('manage_listing')}}>
             <img src={profile_logo} alt=""></img>
             <p>Profile</p>
-        </div>
-
-        <div className="dashpga_dash_control_button" onClick={(e)=>{setView('manage_listing')}}>
-            <img src={listing_logo} alt=""></img>
-            <p>Listings</p>
         </div>
     </div>
 
@@ -109,4 +100,4 @@ function Admin_Dashboard(){
 }
 
 
-export default Admin_Dashboard;
+export default Client_Dashboard;
