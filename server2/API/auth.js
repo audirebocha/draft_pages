@@ -110,7 +110,7 @@ router.post('/new_registration', urlencodedParser,async (req, res) => {
     year=now.getFullYear()
     var date=String(day)+'/'+String(month+1)+'/'+String(year)
     var hits_count=await Hits.findOne({'date':date})
-    console.log('Hits:',hits_count['hits'])
+    console.log('Hits:',hits_count)
     if(hits_count===null){
         var new_hit=new Hits({'date':date,hits:1})
         new_hit.save()

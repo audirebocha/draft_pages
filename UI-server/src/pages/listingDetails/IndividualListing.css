@@ -40,6 +40,8 @@
   .card-text {
     margin-bottom: 0.5rem;
   }
+
+  
   
   @media (min-width: 768px) {
     /* For medium and larger screens */

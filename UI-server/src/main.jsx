@@ -12,7 +12,9 @@ import Enlisting_form from './pages/enlisting_form/form.jsx';
 import Admin_Login from './pages/admin/login.jsx';
 import Admin_Dashboard from './pages/admin/dashboard/admin_dash.jsx';
 import ListingDetails from './pages/listingDetails/ListingDetails.jsx';
-
+import IndividualListing from './pages/listingDetails/ListingIndividualDetails.jsx';
+import SublettingForm from './pages/orders/SublettingForm.jsx';
+import Client_Dashboard from './pages/client/dashboard/client_dash.jsx';
 
 
 const router = createBrowserRouter([
@@ -45,8 +47,20 @@ const router = createBrowserRouter([
     element: <Admin_Dashboard/>,
   },
   {
+    path:'client_dashboard',
+    element: <Client_Dashboard/>,
+  },
+  {
     path:'listingDetails',
     element: <ListingDetails/>,
+  },
+  {
+    path:'listingDetails/:id',
+    element: <IndividualListing/>,
+  },
+  {
+    path:'listingDetails/:id/SublettingForm',
+    element: <SublettingForm/>,
   },
   
 ])

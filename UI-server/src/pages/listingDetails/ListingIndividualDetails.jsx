@@ -6,7 +6,7 @@ import Navbar from '../home/components/navbar/Navbar';
 import { useNavigate } from 'react-router-dom';
 
 
-const IndividualListing = () => {
+function IndividualListing() {
   const { id } = useParams();
   const [listing, setListing] = useState(null);
 

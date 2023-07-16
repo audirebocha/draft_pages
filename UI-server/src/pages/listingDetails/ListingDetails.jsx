@@ -46,7 +46,6 @@ export default function ListingDetails() {
           display: grid;
           grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
           grid-gap: 20px;
-         
         }
 
         .card-link {
@@ -55,16 +54,31 @@ export default function ListingDetails() {
         }
 
         .card {
-        
           border: 1px solid #ccc;
           padding: 20px;
           background-color: #f9f9f9;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
         }
-        .card img{
-            width: 250%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 15px;
+
+        .card img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          border-radius: 15px;
+          margin-bottom: 10px;
+        }
+
+        .card-body .card-title {
+          font-size: 18px;
+          margin-bottom: 10px;
+        }
+
+        .card-body .card-location,
+        .card-body .card-price {
+          font-size: 14px;
         }
       `}</style>
     </div>
