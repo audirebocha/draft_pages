@@ -1,0 +1,150 @@
+.container {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .card {
+   
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 4px 4px 0 0;
+  }
+  
+  .card-img-top {
+    width: 100%;
+    height: auto;
+    border-radius: 4px 4px 0 0;
+  }
+  
+  .card-body {
+    padding: 1rem;
+  }
+  
+  .card-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .card-text {
+    margin-bottom: 0.5rem;
+  }
+
+  
+  
+  @media (min-width: 768px) {
+    /* For medium and larger screens */
+    .card img {
+        width: 400px;
+        height: 400px;
+    }
+    .card-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+  }
+  
+  @media (max-width: 767px) {
+    /* For smaller screens */
+    .card img {
+        width: 400px;
+        height: 400px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    /* For extra small screens */
+    .card img {
+      width: 400px;
+      height: 400px;
+    }
+  }
+  .main{
+    display: flex;
+    
+    justify-content: between;
+
+  }
+  .card-aside{
+    margin-left: 2rem;
+
+  }
+  .individual-button{
+    
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 15px;
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      width: 100px;
+      height: 39px;
+      margin-top: 10px;
+      margin-left: 30px;
+      text-align: center;
+  
+  }
+  .individual-button:hover {
+    background-color: #222;
+  }
+  .aside{
+   display: flex;
+    flex-direction: column;
+  }
+
+
+
+
+
+
+  /* *****************************************************Filter styling******************************************************** */
+  body{
+    margin: 0%;
+    padding: 0%;
+}
+
+.filter_bar_lvl1{
+display: inline-flex;
+width: 100%;
+padding: 10px;
+flex-direction: column;
+align-items: center;
+gap: 10px;
+}
+
+.filter_bar_lvl2{
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter_containerlvl3{
+    display: inline-flex;
+    padding: 10px;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter_input_container{
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 3px;
+}

@@ -1,0 +1,49 @@
+.header {
+  background-image: url('./assets/image1.jpg'); /* Replace with your own image path */
+  background-size: cover;
+  background-position: center;
+  height: calc(100vh - 80px); /* Adjust the height based on your needs */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-content {
+  text-align: center;
+  color: #000000; /* Update the color to a beautiful shade */
+  position: relative;
+  z-index: 1;
+}
+
+.header-title {
+  font-size: 60px;
+  margin-bottom: 20px;
+  font-weight: bold; /* Add font weight to make the title stand out */
+}
+
+.header-text {
+  font-size: 20px;
+  margin-bottom: 40px;
+  font-weight: 500; /* Adjust font weight as needed */
+}
+
+.header-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #45b1e8; /* Update the button color to match the text color */
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold; /* Add font weight to make the button text stand out */
+}
+.Logo {
+  position: absolute;
+  top: 10px; /* Adjust the value as per your requirements */
+  left: 10px; /* Adjust the value as per your requirements */
+  width: 100px; /* Adjust the width as per your requirements */
+  height: auto; /* Maintain aspect ratio */
+  max-width: 10%; /* Maintain aspect ratio */
+  max-height: 10%; /* Maintain aspect ratio */
+
+}
