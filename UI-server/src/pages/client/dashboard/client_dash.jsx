@@ -39,7 +39,7 @@ function Client_Dashboard() {
                     console.log('Continue...')
                 } else {
                     toast.warning('Please log in')
-                    nav('/admin')
+                    nav('/login')
                 }
             })
             .catch(e => { console.error(e) })
@@ -80,7 +80,7 @@ function Client_Dashboard() {
         <>
             <nav className="nav">
                 <div className="nav_1">
-                    <span className="logo">Sharespace</span>
+                    <span className="logo" style={{'cursor':'pointer'}} onClick={(e)=>{ nav('/') }} >Sharespace</span>
                     <button onclick="link('/registration')">Dashboard</button>
                     <button onClick={(e) => { logout_request() }}>Logout</button>
                 </div>
@@ -94,10 +94,10 @@ function Client_Dashboard() {
                     <p>Profile</p>
                 </div>
 
-                <div className="dashpga_dash_control_button" onClick={(e) => { setView('manage_listing') }}>
+                {/* <div className="dashpga_dash_control_button" onClick={(e) => { setView('manage_listing') }}>
                     <img src={save_logo} alt=""></img>
                     <p>Saved</p>
-                </div>
+                </div> */}
 
 
                 <div className="dashpga_dash_control_button" onClick={(e) => { setView('manage_my_listings') }}>
@@ -106,8 +106,8 @@ function Client_Dashboard() {
                 </div>
 
                 <div className="dashpga_dash_control_button" onClick={(e) => { setView('manage_my_applications') }}>
-                    <img src={listing_logo} alt=""></img>
-                    <p>My applications</p>
+                    <img src={save_logo} alt=""></img>
+                    <p>My saved applications</p>
                 </div>
 
 

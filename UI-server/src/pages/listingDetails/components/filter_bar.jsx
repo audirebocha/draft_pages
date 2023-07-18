@@ -9,10 +9,10 @@ export default function Filter_bar(props) {
                 <div className="filter_bar_lvl2">
 
                     <div className="filter_containerlvl3">
-                            <div className="filter_input_container">
-                                <input type="text" name="" id="" value={search_key} onChange={(e)=>{set_search_key(e.target.value)}} />
+                            <div className="filter_input_container" style={{'background':'white'}}>
+                                <input type="text" name="" id="" value={search_key} onChange={(e)=>{set_search_key(e.target.value)}}  placeholder="Search for a town, city or school" style={{'width':'400px' ,'height':'35px', 'padding-left':'5px', 'border':'none'  }} />
                             </div>
-                            <button  onClick={(e)=>{ props.search(search_key) }} >Search</button>
+                            <button  onClick={(e)=>{ props.search(search_key) }} style={{'height':'35px' , 'padding':'5px'}}>Search</button>
                     </div>
                 </div>
             </section>

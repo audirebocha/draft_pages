@@ -48,7 +48,6 @@ export default function ListingDetails() {
       <Navbar />
       <Filter_bar search={search}/>
       <h1>Listings</h1>
-      <button onClick={(e)=>{ search() }} >Filter</button>
 
       <div className="card-container">
         {listings.map((listing) => (

@@ -43,8 +43,10 @@ db_connect()
 //*************************************************************************/
 router.post('/dashboard_data',jsonParser,async (req,res)=>{
     if(req.session.auth){
-        var hits_data=await Hits.find()
-        res.json({status:'success',data:{users_count:50,listing_count:500,hit_data:hits_data}})
+        var hits_data=await Hits.find().sort({'createdAt': 'desc'})
+        var user_count= await User.count()
+        var listing_count= await Listings.count()
+        res.json({status:'success',data:{'users_count':user_count,'listing_count':listing_count,hit_data:hits_data}})
     }else{
         res.json({status:'failed',message:'please login first'})
     }

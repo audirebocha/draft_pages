@@ -195,9 +195,17 @@ router.post('/listing_search',jsonParser, async (req,res)=>{
 
 router.post('/my_listings_data',jsonParser,async (req,res)=>{
     if(req.session.auth){
+        var application_stats= {}
         var listing_data=await Listings.find({owners_email:String(req.session.email)})
-        console.log(listing_data)
-        res.json({status:'success',data:{listings_data:listing_data}})
+        //console.log(listing_data)
+        listing_data.map(async (listing)=>{
+            console.log(listing['_id'])
+            var c = await Application.find({'listing_id':listing['_id']}).count()
+            console.log( c)
+            application_stats[String(listing['_id'])]=c
+            //console.log(application_stats)
+        })
+        res.json({status:'success',data:{listings_data:listing_data,'application_stats':application_stats}})
     }else{
         res.json({status:'failed',message:'please login first'})
     }
@@ -267,6 +275,79 @@ router.post('/get_my_listing_applicants_data',jsonParser,async (req,res)=>{
         res.json({status:'failed',message:'please login first'})
     }
 })
+
+
+router.post('/approve_my_applicants_application',jsonParser,async (req,res)=>{
+    var data=req.body
+    console.log('Approving an application..:',data)
+    if(req.session.auth){
+        var email= req.session.email
+        var result = await Application.findById(data['application_id'])
+        //console.log(result)
+        if(!result){
+            console.log('No Application found')
+            res.json({status:'failed',data:{data:101, message:'application not found for your listing' } })
+        }else{
+            console.log('Found one and now updating')
+            // result.updateOne({application_status:'approved'})
+            await result.updateOne({application_status:'approved'})
+            await result.save()
+            res.json({ status:'success', data:{my_applicants:result, message:'Application approved successfully' } })
+        }
+    }else{
+        res.json({status:'failed',message:'please login first'})
+    }
+})
+
+
+
+router.post('/applicant_get_listing_owner_details',jsonParser,async (req,res)=>{
+    var data=req.body
+    console.log('Getting listing owners details:',data)
+    if(req.session.auth){
+        var email= req.session.email
+        var result = await Listings.findById(data['listing_id'])
+        console.log(result)
+        if(!result){
+            console.log('No Listing found')
+            res.json({status:'failed',data:{data:101, message:'We did not find the owner of the specified listing' } })
+        }else{
+            console.log('Found a listing getting the owners email')
+            var listing_owners_email=result['owners_email']
+            var owners_details= await User.findOne({'email':listing_owners_email})
+            console.log('Found the owner, sending over the data')
+            // result.updateOne({application_status:'approved'})
+            // await result.updateOne({application_status:'approved'})
+            // await result.save()
+            res.json({ status:'success', data:{owner:owners_details, message:'In progress' } })
+        }
+    }else{
+        res.json({status:'failed',message:'please login first'})
+    }
+})
+
+
+
+router.post('/delete_my_application',jsonParser,async (req,res)=>{
+    var data=req.body
+    console.log('Deleting application:',data)
+    if(req.session.auth){
+        var email= req.session.email
+        var result =await Application.findById(data['application_id'])
+        console.log(result)
+        if(!result){
+            console.log('No Listing found')
+            res.json({status:'failed',data:{data:101, message:'We did not find an application with this id' } })
+        }else{
+            console.log('Found the application, deleting ...')
+            await result.deleteOne()
+            res.json({ status:'success', data:{code:101, message:'Deletion has been done' } })
+        }
+    }else{
+        res.json({status:'failed',message:'please login first'})
+    }
+})
+
 
 
 //***************************************************************************************************** */

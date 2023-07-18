@@ -49,18 +49,18 @@ function Users_Manager() {
                                     <tr>
                                         <td>{user['username']}</td>
                                         <td>{user['email']}</td>
-                                        <td>
+                                        {/* <td>
                                             <div className="dashpga_dash_table_button">
                                                 <img src={view_logo} alt=""></img>
                                                 <p>View</p>
                                             </div>
-                                        </td>
-                                        <td>
+                                        </td> */}
+                                        {/* <td>
                                             <div className="dashpga_dash_table_button">
                                                 <img src={delete_logo} alt=""></img>
                                                 <p>Delete</p>
                                             </div>
-                                        </td>
+                                        </td> */}
                                     </tr>
                                 </>)
                         })}

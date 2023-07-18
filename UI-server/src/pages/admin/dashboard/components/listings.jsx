@@ -2,12 +2,18 @@ import React, { useEffect, useState } from "react";
 import delete_logo from '../dash_icons/delete.svg'
 import view_logo from '../dash_icons/visibility.svg'
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 
 function Listings_Manager() {
     useEffect(() => {
         get_users_data()
     },[])
+
+    const navigate = useNavigate()
+    function nav(url) {
+        navigate(url);
+    }
 
     const headers = { headers: { 'Content-Type': 'application/json' }, withCredentials: true }
 
@@ -70,7 +76,7 @@ function Listings_Manager() {
                                         <td>{listing['title']}</td>
                                         <td>{listing['place']}</td>
                                         <td>
-                                            <div className="dashpga_dash_table_button">
+                                            <div className="dashpga_dash_table_button"   onClick={(e)=>{nav('/listingDetails/'+listing['_id'])}}>
                                                 <img src={view_logo} alt=""></img>
                                                 <p>View</p>
                                             </div>

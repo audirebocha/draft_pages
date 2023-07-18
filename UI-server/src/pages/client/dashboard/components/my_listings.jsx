@@ -25,8 +25,9 @@ function My_Listings_Manager(props) {
             .then(res => {
                 console.log(res.data)
                 if (res.data['status'] === 'success') {
-                    //console.log(res.data['data'])
+                    console.log(res.data['data'])
                     set_my_listings(res.data['data']['listings_data'])
+                    set_application_stats(res.data['data']['application_stats'])
                 } else {
                     toast.warning('Please log in')
                     nav('/admin')
@@ -43,11 +44,12 @@ function My_Listings_Manager(props) {
                 console.log(res.data)
                 if (res.data['status'] === 'success') {
                     console.log(res.data['data'])
-                    set_users_list(res.data['data']['listings_data'])
+                    //set_my_listings(res.data['data']['listings_data'])
+                    get_users_data()
                     //set_users_list(res.data['data']['listings_data'])
                 } else {
                     console.log(res.data['data'])
-                    toast.warning('Please log in')
+                    //toast.warning('Please log in')
                     //nav('/admin')
                 }
             })
@@ -56,12 +58,15 @@ function My_Listings_Manager(props) {
 
 
     const [my_listings, set_my_listings] = useState([])
+    const [application_stats, set_application_stats] = useState([])
 
 
 
     return (
-        <>
-            <div className="dashpga_dash_container_type2_centered">
+        <>{(()=>{ 
+            if(my_listings.length>0){
+                return (
+                    <div className="dashpga_dash_container_type2_centered">
                 <button>Back</button>
                 <h2>My listings</h2>
                 <div className="dashpga_dash_table">
@@ -78,7 +83,7 @@ function My_Listings_Manager(props) {
                                     <tr key={listing['_id']}>
                                         <td>{listing['title']}</td>
                                         <td>{listing['place']}</td>
-                                        <td>23</td>
+                                        <td>{application_stats[listing['_id']]}</td>
                                         <td>
                                             <div className="dashpga_dash_table_button" onClick={(e)=>{nav('/listingDetails/'+listing['_id'])}} >
                                                 <img src={view_logo} alt=""></img>
@@ -91,12 +96,12 @@ function My_Listings_Manager(props) {
                                                 <p>Applicants</p>
                                             </div>
                                         </td>
-                                        <td>
+                                        {/* <td>
                                             <div className="dashpga_dash_table_button" onClick={(e)=>{delete_listing_request(listing['_id'])}}>
                                                 <img src={delete_logo} alt=""></img>
                                                 <p>Edit</p>
                                             </div>
-                                        </td>
+                                        </td> */}
                                         <td>
                                             <div className="dashpga_dash_table_button" onClick={(e)=>{delete_listing_request(listing['_id'])}}>
                                                 <img src={delete_logo} alt=""></img>
@@ -111,6 +116,16 @@ function My_Listings_Manager(props) {
                     </table>
                 </div>
             </div>
+                )
+            }else{
+                return (
+                    <>
+                    <span onClick={(e)=>{ nav('/enlisting_form') }} >Click here to enlist your property</span>
+                    </>
+                )
+            }
+         })()}
+            
         </>
     )
 }

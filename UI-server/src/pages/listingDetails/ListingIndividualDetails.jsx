@@ -65,12 +65,10 @@ function IndividualListing() {
         <div className="card">
           <h1 className="card-title">{listing.title} - {listing.place}</h1>
           <div className='main'>
-            <img src="https://res.cloudinary.com/dhoqljhsj/image/upload/v1689091377/ltz1co5iitl4fjh8txpz.webp" alt="Listing" className="card-img-top" />
+            <img src={listing.images[0]} alt="Listing" className="card-img-top" />
             <div className="aside">
               <p className="card-aside"><b>Kes  {listing.price}</b> Monthly</p>
-              <button className="individual-button" onClick={e => { nav('SublettingForm') }}>Reserve </button>
               <button className="individual-button" onClick={e => { make_application(id) }}>Apply</button>
-              <button className="individual-button" onClick={e => { nav('SublettingForm') }}>Save</button>
             </div>
           </div>
 

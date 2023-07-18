@@ -59,7 +59,7 @@ const router = createBrowserRouter([
     element: <IndividualListing/>,
   },
   {
-    path:'listingDetails/:id/SublettingForm',
+    path:'SublettingForm',
     element: <SublettingForm/>,
   },
   

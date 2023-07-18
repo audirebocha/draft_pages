@@ -208,7 +208,7 @@ function Profile() {
                         </div>
                     </div>
 
-                    <p>Change your password</p>
+                    {/* <p>Change your password</p>
                     <div class="profile_input_container_vertical">
                         <div class="profile_input">
                             <p>New Password</p>
@@ -226,7 +226,7 @@ function Profile() {
                             <img src="./add_circle.svg" alt=""></img>
                             <p>Save</p>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
 
             </div>
